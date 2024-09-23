@@ -1,0 +1,43 @@
+---
+---
+
+<button type="button" aria-label="menu">
+    <div></div>
+    <div></div>
+    <div></div>
+</button>
+
+<style>
+    button {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 3rem;
+        height: 2rem;
+        border: 0;
+        background: transparent;
+        gap: 0.6rem;
+    }
+    button > div {
+        background: var(--text-primary);
+        width: 8px;
+        height: 4px;
+        border-radius: 0.25rem;
+        transition: all 0.3s ease;
+        transform-origin: left;
+    }
+    input {
+        opacity: 1;
+    }
+    .active div:first-child {
+        width: 100%;
+        transform: rotate(45deg);
+    }
+    .active div:nth-child(2) { 
+        opacity: 0;
+    }
+    .active div:last-child{
+        width: 100%;
+        transform: rotate(-45deg);
+    }
+</style>

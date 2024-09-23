@@ -1,0 +1,69 @@
+---
+import Github from "./icons/Github.astro";
+import Twitter from "./icons/Twitter.astro";
+import Youtube from "./icons/Youtube.astro";
+---
+
+<section>
+    <div class="image">
+        <img
+            src="/profile.png"
+            alt="Profile picture"
+        />
+        <img class="image-back" src="/profile.png" />
+    </div>
+    <h1>Jose Luis B. Leyva</h1>
+    <div class="links">
+        <a href="https://github.com/withastro/astro" target="_blank"><Github /></a>
+        <a href="https://twitter.com/withastro" target="_blank"><Twitter /></a>
+        <a href="https://astro.build" target="_blank"><Youtube /></a>
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    .image {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+    img {
+        border-radius: 100%;
+        width: 200px;
+        height: auto;
+    }
+    img.image-back {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        filter: blur(40px);
+        z-index: -100;
+        transform: translate(10px, 10px);
+        border-radius: 100%;
+        opacity: 0.2;
+    }
+
+    .links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.2rem;
+        background: var(--gradient-style-2);
+        padding: 0.5rem 0.7rem;
+        border-radius: 100%;
+        font-weight: 500;
+    }
+</style>

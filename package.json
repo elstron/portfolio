@@ -10,8 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.15.8",
     "@astrojs/check": "^0.9.3",
+    "@fontsource-variable/dm-sans": "^5.1.0",
+    "@fontsource/exo-2": "^5.1.0",
+    "@fontsource/material-symbols-outlined": "^5.1.0",
+    "astro": "^4.15.8",
     "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "astro-icon": "^1.1.1"
   }
 }

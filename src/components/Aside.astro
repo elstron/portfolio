@@ -1,0 +1,40 @@
+---
+import Navigation from "./Navigation.astro";
+import Profile from "./Profile.astro";
+---
+
+<aside>
+    <!-- <Profile /> -->
+    <Navigation />
+</aside>
+
+<style>
+    aside {
+        padding-left: 10px;
+        padding-right: 10px;
+        max-height: 100dvh;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+
+    @media (max-width: 768px) {
+        aside {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 1000%;
+            height: 100%;
+            padding: 0;
+            z-index: 10;
+            justify-content: center;
+            background: #0f111d9e;
+        }
+    }
+</style>
+

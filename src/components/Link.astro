@@ -1,0 +1,32 @@
+---
+
+interface Props {
+    href: string;
+    acction?: boolean;
+}
+
+const { href, acction } = Astro.props;
+---
+<a href={href} target="_blank" class:list={[acction ? 'action' : '']}>
+    <slot />
+</a>
+
+<style>
+    a {
+        color: var(--text-color);
+        text-decoration: none;
+        background: var(--background-transparent);
+        padding: 0.5rem;
+        margin-top: 10px;
+        border-radius: 25px;
+        min-width: 150px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .action {
+        background: var(--accent-color);
+    }
+</style>
