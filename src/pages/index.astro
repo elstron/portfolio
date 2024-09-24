@@ -7,17 +7,18 @@ import Projects from '../components/pages/Home/Projects.astro';
 
 <Layout title="Welcome to Astro." description='Learn how to build an Astro site'>
 	<Hero/>
+	<!-- <div class="divider"></div> -->
 	<Projects/>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
+	.divider {
+		position: absolute;
+		top: 70dvh;
+		left: 0;
+		width: 99%;
+		height: 200dvh;
+		background: var(--background-color-2);
+		border-radius: 25px;
 	}	
 </style>

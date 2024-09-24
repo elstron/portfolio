@@ -32,6 +32,13 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		display: flex;
 		padding: 1px;
 		gap: 1rem;
+		&& > a {
+			width: 100%;
+			display: flex;
+			border-radius: 7px;
+
+			
+		}
 	}
 
 	.tecnologies {
@@ -56,17 +63,12 @@ const { href, title, body, image, tecnologies } = Astro.props;
 	}
 
 	.tecnologies .icon {
-		background-color: #23262d;
-		border: solid 2px rgba(11, 41, 41, 0.24);
+		background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+		border: .5px solid hsla(0,0%,100%,.4);
+		border-radius: 7px;
 		padding: 0.5rem;
 		border-radius: 0.5rem;
 		list-style: none;
-	}
-
-	.link-card > a {
-		width: 100%;
-		display: flex;
-		border-radius: 7px;
 	}
 
 	h2 {
@@ -80,8 +82,8 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		color: #a3a3a3;
 	}
 
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
+	.link-card:is(:hover, :focus-within) a {
+		background-color: var(--gradient-style-3);
 	}
 
 	.link-card:is(:hover, :focus-within) h2 {
@@ -99,6 +101,7 @@ const { href, title, body, image, tecnologies } = Astro.props;
 
 	img {
 		aspect-ratio: 16 / 9;
+		width: 100%;
 		max-height: 220px;
 		object-fit: cover;
 		border-radius: 7px;
