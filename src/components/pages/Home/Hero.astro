@@ -15,20 +15,21 @@ import Profile from "../../Profile.astro";
             <p>
                 I'm Jose Luis B. Leyva, I have 5 years as a freelance developer with technologies like Javascript, Typescript, PHP, HTML, CSS, Wordprees and more.
             </p>
+            <div class="contact">
+        
+                <Link href="/cv.pdf" target>
+                    <Download />
+                    CV
+                </Link>
+                <Link href="mailto:Contact@jose.leyva.dev"  acction>
+                    <Mail />
+                    Contact 
+                </Link>
+            </div>
         </div>
     </div>
 
-    <div class="contact">
-        
-        <Link href="/cv.pdf" >
-            <Download />
-            CV
-        </Link>
-        <Link href="mailto:Contact@jose.leyva.dev"  acction>
-            <Mail />
-            Contact
-        </Link>
-    </div>
+    
     <!-- <div class="divider">
 
     </div> -->
@@ -55,7 +56,7 @@ import Profile from "../../Profile.astro";
     .contact {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         gap: 1rem;
         margin-top: 45px;
     }
