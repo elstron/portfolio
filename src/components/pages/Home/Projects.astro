@@ -30,17 +30,18 @@ const projects = [
     <div class="container">
         {
             projects.map((project) => {
-            const { title, body, href, image, tecnologies } = project
-            return(
-                
-                <Card
-                    title={title}
-                    body={body}
-                    href={href}
-                    image={image}
-                    tecnologies={tecnologies}
-                />
-            )})
+                const { title, body, href, image, tecnologies } = project
+                return(
+                    
+                    <Card
+                        title={title}
+                        body={body}
+                        href={href}
+                        image={image}
+                        tecnologies={tecnologies}
+                    />
+                )
+            })
         }
     </div>
 </div>
@@ -52,9 +53,8 @@ const projects = [
         flex-direction: column;
         min-height: 100dvh;
         margin-top: 90px;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
-        background-color: #0f0f16;
     }
     /* #projects::after {
         content: "";
@@ -69,7 +69,7 @@ const projects = [
     #projects>.container {
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
     }
 </style>

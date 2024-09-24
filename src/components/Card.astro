@@ -1,4 +1,5 @@
 ---
+import { iconsTags } from '../data/icons';
 interface Props {
 	title: string;
 	body: string;
@@ -13,20 +14,16 @@ const { href, title, body, image, tecnologies } = Astro.props;
 <div class="link-card">
 	<ul class="tecnologies">
 		{
-			tecnologies?.map((tecnology) => (
-				<li>{tecnology}</li>
-			))
+			tecnologies?.map((tecnology) => {
+				const icon = iconsTags[tecnology.toLowerCase() as keyof typeof iconsTags];
+				return (
+					<iconify-icon class="icon" icon={icon} width="20" height="20" />
+				)
+			})
 		}
 	</ul>
 	<a href={href} target="_blank">
 		<img src={image} alt={title} />
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
 	</a>
 </div>
 <style>
@@ -34,40 +31,42 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		list-style: none;
 		display: flex;
 		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 100% 100%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+		gap: 1rem;
 	}
 
 	.tecnologies {
 		display: flex;
-		flex-wrap: wrap;
+		flex-direction: column;
+		justify-content: space-evenly;
 		gap: 0.5rem;
+		position: relative;
+		&&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 75%;
+			transform: translateX(-50%);
+			width: 24px;
+			height: 97%;
+			background-color: #ffffff15;
+			opacity: 0.8;
+			z-index: 0;
+			filter: blur(29px);
+		}
 	}
 
-	.tecnologies li {
+	.tecnologies .icon {
 		background-color: #23262d;
+		border: solid 2px rgba(11, 41, 41, 0.24);
 		padding: 0.5rem;
 		border-radius: 0.5rem;
 		list-style: none;
 	}
 
 	.link-card > a {
-		display: flex;
-		flex-direction: column;
-		height: 100%;	
 		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
+		display: flex;
+		border-radius: 7px;
 	}
 
 	h2 {
@@ -99,8 +98,8 @@ const { href, title, body, image, tecnologies } = Astro.props;
 	}
 
 	img {
-		width: 100%;
-		height: 250px;
+		aspect-ratio: 16 / 9;
+		max-height: 220px;
 		object-fit: cover;
 		border-radius: 7px;
 	}
