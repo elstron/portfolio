@@ -3,11 +3,12 @@
 interface Props {
     href: string;
     acction?: boolean;
+    target?: boolean;
 }
 
-const { href, acction } = Astro.props;
+const { href, acction, target } = Astro.props;
 ---
-<a href={href} target="_blank" class:list={[acction ? 'action' : '']}>
+<a href={href} class:list={[acction ? 'action' : '']} target={target ? '_blank' : ''}>
     <slot />
 </a>
 
