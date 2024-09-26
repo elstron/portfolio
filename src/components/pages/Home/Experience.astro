@@ -1,0 +1,62 @@
+---
+import Card from "../../Card.astro";
+
+const projects = [
+    {
+        title: "F1 Calendar",
+        body: "F1 Calendar created with Astro, React and Googlesheets",
+        href: "https://f1calendar-xi.vercel.app/",
+        image: "https://f1calendar-xi.vercel.app/F1-Schendule-2024.webp",
+        tecnologies: ["Astro", "React", "Typescript"],
+    },{
+        title: "Cine.is",
+        body: "Cine.is is a web application that allows you to search and filter movies.",
+        href: "#",
+        image:"/cineis.jpg",
+        tecnologies: ["PHP", "HTML", "CSS", "Javascript"],
+    },{
+        title: "Ifortnite",
+        body: "Informational website about the fortnite store, news, leaks and more.",
+        href: "https://ifortnite.pages.dev/",
+        image:"/ifortnite.png",
+        tecnologies: ["Astro", "React", "Express", "Typescript"],
+    }   
+]
+---
+<div id="experience">
+    <div class="container">
+        {
+            projects.map((project) => {
+                const { title, body, href, image, tecnologies } = project
+                return(
+                    
+                    <Card
+                        title={title}
+                        body={body}
+                        href={href}
+                        image={image}
+                        tecnologies={tecnologies}
+                    />
+                )
+            })
+        }
+    </div>
+</div>
+
+<style>
+    #experience {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+        margin-top: 90px;
+        justify-content: center;
+        align-items: center;
+    }
+    #experience>.container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+    }
+</style>
