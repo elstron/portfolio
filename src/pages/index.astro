@@ -3,22 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Hero from '../components/pages/Home/Hero.astro';
 import Projects from '../components/pages/Home/Projects.astro';
+import Divider from '../components/Divider.astro';
+import Experience from '../components/pages/Home/Experience.astro';
 ---
 
 <Layout title="Welcome to Astro." description='Learn how to build an Astro site'>
 	<Hero/>
-	<!-- <div class="divider"></div> -->
+	<Divider top="70dvh"/>
 	<Projects/>
+	<Experience/>
 </Layout>
-
-<style>
-	.divider {
-		position: absolute;
-		top: 70dvh;
-		left: 0;
-		width: 99%;
-		height: 200dvh;
-		background: var(--background-color-2);
-		border-radius: 25px;
-	}	
-</style>
