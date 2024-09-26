@@ -9,4 +9,12 @@ export const iconsTags = {
     "css": "vscode-icons:file-type-css",
     "express": "simple-icons:express",
     "nodejs": "ri:nodejs-fill",
+    
+    // Menu Icons
+    "projects": "tdesign:code",
+    "hero": "mdi:about-circle-outline",
+    "experience": "gg:list-tree",
+    "contact": "material-symbols-light:contact-mail-outline-rounded",
+    "skills": "game-icons:skills",   
+
 } as const
