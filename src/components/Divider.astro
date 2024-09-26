@@ -1,0 +1,21 @@
+---
+interface Props {
+    top?: boolean | string;
+    height?: boolean | string;
+}
+
+const { top, height } = Astro.props;
+---
+<div class="divider" style={`top: ${top ? top : '120dvh'}; height: ${height ? height : '100dvh'}`}></div>
+
+<style>
+	.divider {
+		position: absolute;
+        width: 100%;
+        left: 0;
+		/* left: 25px;
+		width: calc(100% - 50px); */
+		background: var(--gradient-3);
+		border-radius: 25px;
+	}	
+</style>
