@@ -37,7 +37,7 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		display: flex;
 		padding: 1px;
 		gap: 1rem;
-		&& > a {
+		& > a {
 			width: 100%;
 			display: flex;
 			flex-direction: column;
@@ -45,7 +45,7 @@ const { href, title, body, image, tecnologies } = Astro.props;
 
 			
 		}
-		&& > a > .content {
+		& > a > .content {
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
@@ -60,7 +60,7 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		justify-content: space-evenly;
 		gap: 0.5rem;
 		position: relative;
-		&&::after {
+		&::after {
 			content: "";
 			position: absolute;
 			top: 0;
