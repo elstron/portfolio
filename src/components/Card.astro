@@ -24,7 +24,12 @@ const { href, title, body, image, tecnologies } = Astro.props;
 	</ul>
 	<a href={href} target="_blank">
 		<img src={image} alt={title} />
+		<div class="content">
+			<h2>{title}</h2>
+			<p>{body}</p>
+		</div>
 	</a>
+	
 </div>
 <style>
 	.link-card {
@@ -35,10 +40,18 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		&& > a {
 			width: 100%;
 			display: flex;
+			flex-direction: column;
 			border-radius: 7px;
 
 			
 		}
+		&& > a > .content {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			padding: 1rem;
+		}
+
 	}
 
 	.tecnologies {
@@ -104,7 +117,8 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		width: 100%;
 		max-height: 220px;
 		object-fit: cover;
-		border-radius: 7px;
+		border-radius: 17px;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 	}
 </style>
 
