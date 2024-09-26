@@ -1,9 +1,26 @@
+---
+import { iconsTags } from "../data/icons";
+const MENU = {
+    "hero": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact",
+}
+---
+
 <nav>
-    <a href="#Hero" class="active">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    {
+        Object.entries(MENU).map(([key, value]) => {
+            const icon = iconsTags[key as keyof typeof iconsTags];
+            return (
+                <a href={`#${key}`}>
+                    <iconify-icon class="icon" icon={icon} width="20" height="20" />
+                    {value}
+                </a>
+            )
+        })
+    }
 </nav>
 
 <style>
@@ -14,14 +31,13 @@
         gap: 1.9rem;
         backdrop-filter: blur(10px);
         padding: 1rem;
-        /* border-left:solid 1px rgb(255 255 255 / 12%); */
+        background: var(--background-color-2);
+        border-radius: 25px;
     }
 
     a {
-        color: var(--text-color);
-        text-decoration: none;
-        padding: 0.5rem;
         border-radius: 25px;
+        padding: 0.5rem;
         width: 100%;
         text-align: center;
         position: relative;
@@ -29,6 +45,11 @@
         transition: background-size 0.5s ease;
         background-size: 0% 100%;
         background-repeat: no-repeat;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 10px;
+        padding-right: 2rem;
     }
     a:hover, a.active{
         background-size: 100% 100%;
@@ -48,6 +69,15 @@
         100% {
             background-size: 100% 100%;
         }
+    }
+    @media ( width < 840px) {
+        nav {
+            margin : 1rem;
+        }
+        nav > a {
+                justify-content: center;
+                align-items: center;
+            }
     }
 </style>
 
