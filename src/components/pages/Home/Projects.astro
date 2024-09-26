@@ -47,26 +47,16 @@ const projects = [
     #projects {
         position: relative;
         display: flex;
-        flex-direction: column;
         min-height: 100dvh;
         margin-top: 90px;
         justify-content: center;
         align-items: center;
     }
-    /* #projects::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 200px;
-        background-color: #ffffff;  
-    } */
-
     #projects>.container {
         display: grid;
         width: 100%;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 3rem;
+        padding:0 26px;
     }
 </style>
