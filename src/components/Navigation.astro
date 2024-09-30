@@ -9,7 +9,7 @@ const MENU = {
 }
 ---
 
-<nav>
+<nav class="enter">
     {
         Object.entries(MENU).map(([key, value]) => {
             const icon = iconsTags[key as keyof typeof iconsTags];
@@ -31,7 +31,7 @@ const MENU = {
         gap: 1.9rem;
         backdrop-filter: blur(10px);
         padding: 1rem;
-        background: var(--background-color-2);
+        background: var(--background-transparent);
         border-radius: 25px;
     }
 
