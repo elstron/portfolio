@@ -1,14 +1,8 @@
 ---
 import Navigation from "./Navigation.astro";
-import Profile from "./Profile.astro";
-import Hamburger from "./Hamburger.astro";
 ---
 
 <aside>
-    <div id="hamburger" hidden>
-        <Hamburger />
-    </div>
-    <!-- <Profile /> -->
     <Navigation />
 </aside>
 
@@ -17,17 +11,22 @@ import Hamburger from "./Hamburger.astro";
         padding-left: 10px;
         padding-right: 10px;
         max-height: 100dvh;
-        max-width: 350px;
+        max-width: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         position: sticky;
         top: 0;
         left: 0;
+
+        &.active {
+            display: flex;
+        }
     }
 
     @media ( width < 840px) {
         aside {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -51,6 +50,7 @@ import Hamburger from "./Hamburger.astro";
 
     @media ( width > 430px && width < 768px ) {
         aside {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
