@@ -6,7 +6,21 @@
     <div></div>
     <div></div>
 </button>
-
+<script>
+    const button = document.querySelector('button') as HTMLButtonElement;
+    const aside = document.querySelector('aside') as HTMLElement;
+    const nav = document.querySelector('nav') as HTMLElement;
+    button.addEventListener('click', async () => {
+        if (aside.classList.contains('active')) {
+            nav.classList.add('exit')
+            nav.classList.remove('enter')
+            await new Promise((resolve) => setTimeout(resolve, 700));
+            nav.classList.remove('exit')
+            nav.classList.add('enter')
+        }
+        aside.classList.toggle('active')
+    })
+</script>
 <style>
     button {
         display: flex;
