@@ -1,15 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Hero from '../components/pages/Home/Hero.astro';
 import Projects from '../components/pages/Home/Projects.astro';
 import Divider from '../components/Divider.astro';
 import Experience from '../components/pages/Home/Experience.astro';
+import Hamburger from '../components/Hamburger.astro';
 ---
 
 <Layout title="Stron" description='Developer Freelance'>
+	<div id="hamburger" hidden>
+        <Hamburger />
+    </div>
 	<Hero/>
 	<Divider top="70dvh"/>
 	<Projects/>
 	<Experience/>
 </Layout>
+
+<style>
+	@media ( width < 840px) {
+        #hamburger {
+            display: flex;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 110;
+        }
+    }
+</style>
