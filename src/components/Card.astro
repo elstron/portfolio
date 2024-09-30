@@ -35,21 +35,26 @@ const { href, title, body, image, tecnologies } = Astro.props;
 	.link-card {
 		list-style: none;
 		display: flex;
-		padding: 1px;
 		gap: 1rem;
 		& > a {
 			width: 100%;
 			display: flex;
 			flex-direction: column;
-			border-radius: 7px;
-
-			
+			border-radius: 15px;
+			padding: 10px;
+			background:var(--gradient-style-2);
+			transition: background-color 0.5s ease;
 		}
 		& > a > .content {
 			display: flex;
 			flex-direction: column;
 			gap: 0.5rem;
 			padding: 1rem;
+		}
+
+		&:is(:hover, :focus-within) a {
+			background: var(--background-transparent);
+			border-radius: 15px;	
 		}
 
 	}
@@ -75,28 +80,29 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		}
 	}
 
-	.tecnologies .icon {
+	.tecnologies > .icon {
 		background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
-		border: .5px solid hsla(0,0%,100%,.4);
+		/* border: .5px solid hsla(0,0%,100%,.4); */
 		border-radius: 7px;
 		padding: 0.5rem;
 		border-radius: 0.5rem;
 		list-style: none;
+		cursor: pointer;
+		&:is(:hover, :focus-within) {
+			background-color: #ffffff56;
+			color: #23262d;
+		}
 	}
 
 	h2 {
 		margin: 0;
 		font-size: 1.25rem; 
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		transition: color 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 	}
 	p {
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 		color: #a3a3a3;
-	}
-
-	.link-card:is(:hover, :focus-within) a {
-		background-color: var(--gradient-style-3);
 	}
 
 	.link-card:is(:hover, :focus-within) h2 {
