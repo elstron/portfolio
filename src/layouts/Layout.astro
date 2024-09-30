@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/dm-sans';
 import '@fontsource/material-symbols-outlined/300.css';
+import '../components/styles/animations.css';
 import Aside from '../components/Aside.astro';
 
 interface Props {
@@ -30,11 +31,12 @@ const { title, description } = Astro.props;
 	</body>
 </html>
 <style is:global>
+
 	:root {
 		--text-color: #dbd9e8;
 		--background-color: #07072d;
 		--background-color-2:#0f0f16;
-		--background-transparent: rgb(255 255 255 / 16%);
+		--background-transparent:#ffffff0f;
 		--color:326.39deg 97.57% 48.43%;
 		--accent-color: hsl(var(--color) / 100%);
 		--gradient-style-1:linear-gradient(180deg,hsla(0,0%,100%,.2),hsla(0,0%,60%,.2));
