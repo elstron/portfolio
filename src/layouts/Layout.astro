@@ -17,15 +17,17 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>
 	<body>
-		<main>
-			<slot />
-		</main>
-		<Aside/>
+		<div class="layout__container">
+			<main>
+				<slot />
+			</main>
+			<Aside/>
+		</div>
 		<!-- <VerticalLine/> -->
 		<script defer src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 	</body>
@@ -54,12 +56,19 @@ const { title, description } = Astro.props;
 		font-weight: 600;
 		font-style: normal;
 		scroll-behavior: smooth;
+		overflow-x: hidden;
 	}
 	p {
 		font-weight: 300;
 	}
-
 	body {
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+		/* background: var(--gradient-2); */
+	}
+
+	.layout__container {
 		display: grid;
 		width: 100%;
 		max-width: 1400px;
@@ -67,8 +76,6 @@ const { title, description } = Astro.props;
 		padding:0;
 		grid-template-columns: 1fr 350px;
 		gap: 3rem;
-		min-height: 100dvh;
-		overflow-x: hidden;
 	}
 	body:after {
 		content: "";
@@ -106,8 +113,9 @@ const { title, description } = Astro.props;
 	}
 
 	@media (max-width: 840px) {
-		body {
-			grid-template-columns: 1fr;
+		.layout__container {
+			display: flex;
+			flex-direction: column;
 		}
 	}
 
