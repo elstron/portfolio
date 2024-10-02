@@ -11,7 +11,7 @@ const { title, body, image, date, order } = Astro.props;
 ---
 
 <article class={order ? 'order' : ''}>
-    <img src={image} alt={title} />
+    <img src={image} alt={title} loading="lazy" />
     <div class="content">
         <h3>{title}</h3>
         <p set:html={body}></p>
@@ -24,6 +24,7 @@ const { title, body, image, date, order } = Astro.props;
 <style>
 
     article {
+        --border-color: #493f3f;
         display: flex;
         flex-direction: row;
         gap: 2rem;
@@ -42,6 +43,8 @@ const { title, body, image, date, order } = Astro.props;
             background: var(--gradient-style-2);
             border-radius: 25px;
             padding: 0.5rem;
+            border-right: solid 1px var(--border-color);
+            border-bottom: solid 1px var(--border-color);
         }
 
         & img {
@@ -50,7 +53,8 @@ const { title, body, image, date, order } = Astro.props;
             border-radius: 25px; 
             background: var(--gradient-style-2);
             padding: 1rem;
-            /* border:solid 1px var(--text-color);    */
+            border-right: solid 1px var(--border-color);
+            border-bottom: solid 1px var(--border-color);
         }
 
     }
