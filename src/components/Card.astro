@@ -23,7 +23,7 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		}
 	</ul>
 	<a href={href} target="_blank">
-		<img src={image} alt={title} />
+		<img src={image} alt={title} loading="lazy" />
 		<div class="content">
 			<h2>{title}</h2>
 			<p>{body}</p>
