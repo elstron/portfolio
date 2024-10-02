@@ -18,5 +18,11 @@ const { top, height } = Astro.props;
 		background: var(--gradient-3);
 		border-radius: 25px;
 		z-index: -1;
-	}	
+	}
+	
+	@media (width < 768px) {
+		.divider {
+			display: none;
+		}
+	}
 </style>
