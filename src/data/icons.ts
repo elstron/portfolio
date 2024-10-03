@@ -12,9 +12,10 @@ export const iconsTags = {
     
     // Menu Icons
     "projects": "tdesign:code",
-    "hero": "mdi:about-circle-outline",
+    "about": "mdi:about-circle-outline",
     "experience": "gg:list-tree",
     "contact": "material-symbols-light:contact-mail-outline-rounded",
-    "skills": "game-icons:skills",   
+    "skills": "game-icons:skills",
+    "hero": "teenyicons:home-alt-outline",  
 
 } as const
