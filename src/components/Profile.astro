@@ -1,16 +1,8 @@
----
-import Github from "./icons/Github.astro";
-import Twitter from "./icons/Twitter.astro";
-import Youtube from "./icons/Youtube.astro";
----
-
 <section>
-    <div class="image">
-        <img
-            src="/profile.jpg"
-            alt="Profile picture"
-        />
-    </div>
+    <img
+        src="/profile.jpg"
+        alt="Profile picture"
+     />
 </section>
 
 <style>
@@ -19,44 +11,11 @@ import Youtube from "./icons/Youtube.astro";
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-bottom: 20px;
-    }
-    .image {
-        position: relative;
-        width: 200px;
-        height: 200px;
     }
     img {
         border-radius: 100%;
-        width: 200px;
-        height: auto;
-    }
-    /* img.image-back {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
+        max-width: 200px;
         width: 100%;
-        height: 100%;
-        filter: blur(100px);
-        z-index: -100;
-        transform: translate(10px, 10px);
-        border-radius: 100%;
-        opacity: 0.5;
-    } */
-
-    .links {
-        display: flex;
-        gap: 1rem;
-    }
-
-    a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: 1.2rem;
-        background: var(--gradient-style-2);
-        padding: 0.5rem 0.7rem;
-        border-radius: 100%;
-        font-weight: 500;
+        height: auto;
     }
 </style>
