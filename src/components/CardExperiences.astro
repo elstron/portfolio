@@ -58,4 +58,29 @@ const { title, body, image, date, order } = Astro.props;
         }
 
     }
+
+    @media (width < 768px) {
+        article {
+            gap: 1rem;
+            background: var(--gradient-style-2);
+            border-radius: 25px;
+            & img {
+                max-width: 80px;
+                max-height: 80px;
+                padding: 0.1rem;
+                border: solid 2px #493f3f;
+                margin-top: 1rem;
+                border-radius:10px;
+            }
+
+            & .content {
+                background: none;
+                border: none;
+            }
+
+            &.order{
+                flex-direction: row !important;
+            }
+        }
+    }
 </style>
