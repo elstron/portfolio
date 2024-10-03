@@ -63,19 +63,8 @@ const { title, description } = Astro.props;
 	body {
 		margin: 0;
 		padding: 0;
-		overflow-x: hidden;
-		/* background: var(--gradient-2); */
 	}
 
-	.layout__container {
-		display: grid;
-		width: 100%;
-		max-width: 1400px;
-		margin: 0 auto;
-		padding:0;
-		grid-template-columns: 1fr 350px;
-		gap: 3rem;
-	}
 	body:after {
 		content: "";
 		position: fixed;
@@ -85,6 +74,20 @@ const { title, description } = Astro.props;
 		left: 0;
 		background:var(--gradient);
 		z-index: -4;
+	}
+	
+	.layout__container {
+		display: grid;
+		width: 100%;
+		max-width: 1400px;
+		margin: 0 auto;
+		padding:0;
+		grid-template-columns: 1fr 350px;
+		gap: 3rem;
+	}
+
+	main {
+		padding: 0 20px;
 	}
 
 	.highlight {
