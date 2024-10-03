@@ -1,0 +1,77 @@
+<section id="about">
+    <div class="about__container">
+        <div class="profile">
+            <span>
+                <img src="/profile.jpg" alt="Profile picture" />
+            </span>
+        </div>
+        <div class="content">
+            <p>
+                Mi nombre es Jose Luis Aka: "Stron". <strong>Desarrollador web</strong> Freelance y creador de contenido en Youtube. Con una trayectoria de más de 5 años en desarrollando <strong>paginas web</strong> de foma independiente. 
+            </p>
+            <p>
+                En el 2012 comencé a compartir mis conocimientos a través de mi canal de <strong>Youtube</strong>. Al mismo tiempo desarrolle mi primer blog, donde compartia tutoriales y noticias.
+            </p>
+            <p>
+                Mas tarde en el 2019 empece a desarrollar paginas webs con <strong>PHP, Javascript, HTML y CSS</strong>   primero para amgos y despues gente que he conocido a lo largo de estos ultimos años. 
+            
+            </p>
+            
+            <p>
+                PHP, HTML, CSS, JAVASCRIPT, 
+                TYPESCRIPT, TAILWIND
+                Bootstrap, Wordprees y más.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+
+    .about__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        background: var(--background-transparent);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        backdrop-filter: blur(210px);
+        border-radius: 25px;
+        padding: 2rem;
+    }
+
+
+    .profile {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        & img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 25px;
+        }
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        & p {
+            margin: 20px;
+            margin-top: 0;
+            max-width: 500px;
+            line-height: 1.5;
+            text-wrap: pretty;
+        }
+    }
+    
+
+</style>
