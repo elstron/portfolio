@@ -16,7 +16,7 @@ const MENU = {
             const icon = iconsTags[key as keyof typeof iconsTags];
             return (
                 <a href={`#${key}`}>
-                    {value}
+                    <span class="label">{value}</span>
                     <iconify-icon class="icon" icon={icon} width="20" height="20" />
                 </a>
             )
