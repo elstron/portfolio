@@ -8,4 +8,7 @@ export default defineConfig({
   integrations: [],
   output: 'hybrid',
   adapter: cloudflare(),
+  build: {
+    inlineStylesheets: 'always',
+  }
 });
