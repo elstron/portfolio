@@ -8,7 +8,7 @@ import Profile from "../../Profile.astro";
 <section id="hero">
     <div id="about-home">
         <Profile />
-        <div>
+        <div class="content">
             <h1>
                 I'm <span class="highlight">Freelance</span> Web Developer 
             </h1>
@@ -47,7 +47,12 @@ import Profile from "../../Profile.astro";
         flex-direction: row;
         justify-content: flex-start;
         gap: 1rem;
-        margin-top: 45px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 
     h1 {
@@ -63,7 +68,6 @@ import Profile from "../../Profile.astro";
         font-size: 1.3rem;
         font-weight: 300;
         line-height: 1.5;
-        text-wrap: pretty;
         max-width: 600px;
     }
 
@@ -91,6 +95,7 @@ import Profile from "../../Profile.astro";
             height: 100dvh;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         #about-home {
@@ -99,21 +104,24 @@ import Profile from "../../Profile.astro";
             gap: 4rem;
         }
 
-        div {
-            display: flex;
-            flex-direction: column;
+        .content {
+            justify-content: center;
             align-items: center;
-            text-align: center;
+        }
+        .contact {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
         }
 
         p {
             text-align: center;
-            margin: 17px;
             font-size: 1rem;
         }
 
         h1 {
             font-size: 30px;
+            text-align: center;
         }
     }
 </style>
