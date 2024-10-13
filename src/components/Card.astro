@@ -87,8 +87,9 @@ const { href, title, body, image, tecnologies } = Astro.props;
 		padding: 0.5rem;
 		border-radius: 0.5rem;
 		list-style: none;
-		cursor: pointer;
+		z-index: 1;
 		&:is(:hover, :focus-within) {
+			animation:0.8s ease 0s infinite normal both running wobble-hor-bottom;
 			background-color: #ffffff56;
 			color: #23262d;
 		}
