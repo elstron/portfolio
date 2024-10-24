@@ -1,0 +1,185 @@
+<section id="carrusel">
+    <div class="slider__container">
+        <div class="slider">
+          <div class="slide__track"></div>
+          <div class="slide__track"></div>
+          <div class="slide__track"></div>
+        </div>
+      </div>
+</section>
+
+  <script is:inline>
+    const carruselData = [
+    {name:"mcdonalds", src:"https://cdn-icons-png.flaticon.com/256/732/732217.png"},
+    {name:"addidas", src:"https://cdn-icons-png.flaticon.com/256/731/731962.png"},
+    {name:"android", src:"https://images.vexels.com/media/users/3/139556/isolated/lists/1718a076e29822051df8bcf8b5ce1124-logotipo-de-android.png"},
+    {name:"amazon", src:"https://rastrearpaquete.com.mx/wp-content/uploads/2023/01/amazon-icono.png"},
+    {name:"volvo", src:"https://www.volvogroup.com/mx/about-us/_jcr_content/root/responsivegrid/columncontrol_209345_1975471848/parsys1/image_copy_copy.coreimg.82.256.png/1653897790384/1000x1000-youtube-logo.png"},
+    {name:"slack", src:"https://damiandeluca.com.ar/wp-content/uploads/2020/04/slack.png"},
+    {name:"nike", src:"https://cdn-icons-png.flaticon.com/256/732/732229.png"},
+  ];
+
+    const firstLetterUppercase = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+
+
+    const slideTemplate = (data) => `
+    <div class="slide">
+        <div class="tag">${firstLetterUppercase(data.name)}</div>
+        <img src="${data.src}" alt="${data.name}">
+    </div>
+    `;
+
+    // const newcarruselData = carruselData.concat(carruselData);
+    window.addEventListener("DOMContentLoaded", () => {
+        const slideTrack = document.querySelectorAll(".slide__track");
+        const carruselCards = [...carruselData, ...carruselData]
+            .map((data) => slideTemplate(data))
+            .join("");
+
+        slideTrack.forEach((track) => {
+            track.insertAdjacentHTML("beforeend", carruselCards);
+        })
+    })
+    
+
+  </script>
+
+  <style is:global>
+#carrusel {
+    width: 100%;
+    width: 100%;
+    position: absolute;
+    top: 87px;
+    left: 0;
+    display: grid;
+    place-items: center;
+}
+
+.slider__container {
+    max-width: 700px;
+    width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 3rem 0;
+  position: relative;
+  --animation-duration: 12s;
+}
+
+.slider {
+  width: 100%;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  transform: rotate(-10deg);
+}
+
+.slider__container::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(246, 244, 235, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.slider__container::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(246, 244, 235, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 2;
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slide__track {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-around;
+  height: auto;
+  width: calc(7.5rem * 14);
+  align-items: center;
+  justify-content: flex-end;
+  animation: scroll var(--animation-duration) linear infinite alternate;
+  box-sizing: border-box;
+}
+
+.slide__track:nth-child(2) {
+  animation-direction: reverse;
+}
+.slide__track:nth-child(3) {
+  animation-direction: normal;
+}
+
+.slide__track:has(> .slide:hover) {
+  animation-play-state: paused;
+}
+
+.slide {
+  width: 6rem;
+  height: 6rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff60;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  transition: background opacity transform 0.2s ease-in-out;
+  position: relative;
+  opacity:0.1;
+}
+
+.slide:hover {
+  background: #ffffff;
+  transform: scale(1) rotate(10deg);
+  margin-top: 1rem;
+  opacity:1;
+}
+.slide:hover img {
+  filter: grayscale(0);
+}
+
+.slide img {
+  object-fit: contain;
+  filter: grayscale(100%);
+  width: 5rem;
+}
+
+.slide .tag {
+  position: absolute;
+  background: #222831;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.slide:hover .tag {
+  transform: translateY(50px);
+  opacity: 1;
+}
+
+    
+</style>
