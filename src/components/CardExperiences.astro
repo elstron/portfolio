@@ -25,9 +25,11 @@ const { title, body, image, date, order } = Astro.props;
 
     article {
         --border-color: #493f3f;
+        --time-line-color: #09b9ff;
         display: flex;
         flex-direction: row;
         gap: 2rem;
+        position: relative;
         
         & h3 {
             color: var(--accent-color);
@@ -54,6 +56,27 @@ const { title, body, image, date, order } = Astro.props;
             padding: 1rem;
             border-right: solid 1px var(--border-color);
             border-bottom: solid 1px var(--border-color);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3rem;
+            left: 50%;
+            width: 1px;
+            height: 3rem;
+            background: rgb(9, 206, 255);
+            filter: drop-shadow(var(--time-line-color) 0 0 5px);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 2px);
+            width: 4px;
+            height: 7px;
+            background: #be4cc1;
+            filter: blur(9px);
         }
 
     }
