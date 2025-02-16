@@ -15,7 +15,7 @@ const MENU = {
         Object.entries(MENU).map(([key, value]) => {
             const icon = iconsTags[key as keyof typeof iconsTags];
             return (
-                <a href={`#${key}`}>
+                <a href={`/#${key}`}>
                     <span class="label">{value}</span>
                     <iconify-icon class="icon" icon={icon} width="20" height="20" />
                 </a>
