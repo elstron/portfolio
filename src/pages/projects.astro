@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import ProjectsSection from "../components/pages/Home/ProjectsSection.astro";
+---
+
+<Layout title="Projects" description='Developer Freelance'>
+    <ProjectsSection limit={14}/>
+</Layout>
+
+<style>
+	@media ( width < 840px) {
+        #hamburger {
+            display: flex;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 110;
+        }
+    }   
+</style>
