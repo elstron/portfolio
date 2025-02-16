@@ -1,0 +1,83 @@
+---
+import Card from "../../Card.astro";
+import { projects as projectsData } from "../../../data/projects";
+const {limit} = Astro.props
+const DEFAULT_LIMIT = limit || 4
+let projects = projectsData.slice(0, limit)
+---
+<div id="projects">
+    <div class="container">
+        {
+            projects.map((project) => {
+                return(
+                    <Card {...project}/>
+                )
+            })
+        }
+    </div>
+    {
+        !limit && (
+            <a href="/projects" class="more-projects">More Projects</a>
+        )
+    }
+</div>
+
+<style>
+    #projects {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        min-height: 100dvh;
+        margin-top: 90px;
+        justify-content: center;
+        align-items: center;
+    }
+    #projects>.container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 3rem;
+        padding:0 26px;
+    }
+
+    .more-projects {
+        margin-top: 20px;
+        color: var(--text-color);
+        font-size: 1.3rem;
+        font-weight: 300;
+        text-decoration: none;
+        transition: all 2s;
+        padding: 5px 10px;
+        border-radius: 15px;
+        background: var(--gradient-style-2);
+        &:hover {
+            color: var(--gradient-style-3);
+            background: var(--gradient-style-3);
+        }
+        &:hover::after {
+            content: '→';
+            margin-left: 5px;
+            opacity: 1;
+        }
+        &::after {
+            content: '→';
+            opacity: 0;
+            margin-left: 5px;
+            transition: all 0.9s;
+        }
+    }
+
+    @media (width < 800px) {
+        #projects {
+            margin-top: 120px;
+            min-height: auto;
+            padding: 0 26px;
+        }
+        #projects>.container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+</style>
