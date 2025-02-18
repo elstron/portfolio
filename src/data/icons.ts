@@ -9,6 +9,10 @@ export const iconsTags = {
     "css": "vscode-icons:file-type-css",
     "express": "simple-icons:express",
     "nodejs": "ri:nodejs-fill",
+    "hono": "logos:hono",
+    "htmx": "skill-icons:htmx-light",
+    "cloudflare workers": "devicon:cloudflareworkers",
+    "sqlite": "vscode-icons:file-type-sqlite",
     
     // Menu Icons
     "projects": "tdesign:code",
