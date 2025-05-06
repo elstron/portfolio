@@ -2,7 +2,7 @@
 import Card from "../../Card.astro";
 import { projects as projectsData } from "../../../data/projects";
 const {limit} = Astro.props
-const DEFAULT_LIMIT = limit || 4
+const DEFAULT_LIMIT = limit || 3
 let projects = projectsData.slice(0, DEFAULT_LIMIT)
 ---
 <div id="projects">
