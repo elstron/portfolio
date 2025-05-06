@@ -1,23 +1,24 @@
 ---
 const { icon, name } = Astro.props;
 ---
-
-<iconify-icon
-    style={`--icon-name: "${name}";`}
-    class="icon" 
+<li class="icon" style={`--icon-name: "${name}";`}>
+    <iconify-icon
     icon={icon} 
     width="20" 
     height="20" >
-</iconify-icon>
+    </iconify-icon>
+</li>
 <style>
      .icon {
 		background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
-		/* border: .5px solid hsla(0,0%,100%,.4); */
 		border-radius: 7px;
 		padding: 0.5rem;
 		border-radius: 0.5rem;
 		list-style: none;
 		z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 		&:is(:hover, :focus-within) {
 			animation:0.8s ease 0s normal both running wobble-hor-bottom;
 			background-color: #ffffff56;
