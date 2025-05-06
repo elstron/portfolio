@@ -1,0 +1,63 @@
+<div class="anim">
+    <svg id="circle" width="166" height="166" viewBox="0 0 166 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M83 159C41.0264 159 7 124.974 7 83C7 41.0264 41.0264 7 83 7C124.974 7 159 41.0264 159 83C159 124.974 124.974 159 83 159Z" stroke="white" stroke-width="13"/>
+    </svg>
+    <svg id="svg-back" width="163" height="219" viewBox="0 0 163 219" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50.0008 176C122.5 195.5 164.501 124 153.001 82.5C141.501 41 120.105 27.5 79.0007 21.4587C6.82053 15.3243 -28.9992 109 31.0006 159C91.0004 209 2.50057 232 19.0006 208C19.0006 208 73.2237 111.349 120.105 80L31.0008 124L73.0008 2L107.501 73L75.5008 48.5L50.0008 100.5L162.501 56.5V70C110.158 106.896 69.6946 147.001 17.3728 214.5" stroke="rgb(0, 225, 255)"/>
+    </svg>  
+    <svg id="logo" width="151" height="214" viewBox="0 0 151 214" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M150.5 68C90.5153 109.932 58.1124 147 1 213C37.6994 152.521 61.6202 117.811 111.768 74L20 119.5L62.5 1.5L96 68L66 45L37.5 98.5C81.621 78.6599 106.362 68.4826 150.5 52V68Z" fill="white" stroke="white"/>
+    </svg>
+</div>
+
+<script is:inline>
+    document.getElementById('svg-back').addEventListener('animationend', () => {
+        document.getElementById('logo').style.opacity = 1;
+        document.getElementById('circle').style.display = "block";
+    });
+
+</script>
+
+<style>
+svg#svg-back {
+    width:100%;
+    stroke-dasharray: 1471;
+    stroke-dashoffset: 1471;
+    animation: drawPath 3s ease-in-out;
+    position: absolute;
+    top: -6px;
+    left: -1px;
+    z-index: -1;
+    filter: drop-shadow(-2px 10px 28px #00fbff) blur(0px) drop-shadow(-2px 10px 28px #00fbff) drop-shadow(-2px 10px 28px #00fbff) drop-shadow(-2px 10px 28px #00fbff);
+}
+
+@keyframes drawPath {
+    to {
+    stroke-dashoffset: 0;
+    --o-logo:1;
+    }
+}
+
+svg#logo {
+    opacity: var(--o-logo);
+    filter: drop-shadow(-2px 10px 28px #00fbff);
+    transition: opacity 0.3s ease;
+    width: 100%;
+}
+
+svg#circle {
+    position: absolute;
+    stroke-dasharray: 1471;
+    stroke-dashoffset: 1471;
+    animation: drawPath 3s forwards ease-in-out;
+    display: none;
+    top: 8px;
+    left: -10px;
+    width:  100%;
+}
+
+.anim {
+    position: relative;
+    --o-logo:0;
+}
+</style>
