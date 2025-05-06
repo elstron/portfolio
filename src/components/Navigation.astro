@@ -38,7 +38,7 @@ const MENU = {
 
     a {
         border-radius: 25px;
-        padding: 0.5rem;
+        padding: 0.4rem 0.3rem ;
         width: 100%;
         text-align: center;
         position: relative;
@@ -47,20 +47,33 @@ const MENU = {
         background-size: 0% 100%;
         background-repeat: no-repeat;
         display: flex;
-        justify-content: end;
+        justify-content: center;
         align-items: center;
         gap: 10px;
-        padding-right: 2rem;
     }
-    a:hover, a.active{
+    a:hover{
         background-size: 100% 100%;
         animation: gradient-shift 1s ease;
+    }
+    a:is(:hover) .label {
+        opacity: 1;
+        transition: opacity 0.9s ease-in-out;
     }
 
     a.active::after {
         filter: blur(10px);
         z-index: -1;
         height: 10px;
+    }
+
+    .label {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 57px;
+        background: var(--background-transparent);
+        padding: 0.4rem 1rem;
+        border-radius: 25px;
     }
 
     @keyframes gradient-shift {
@@ -78,7 +91,15 @@ const MENU = {
         nav > a {
                 justify-content: center;
                 align-items: center;
-            }
+        }
+
+        .label {
+            position: relative;
+            opacity: 1;
+            right: 0;
+            padding: auto;
+            background: transparent;
+        }
     }
 </style>
 
