@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -22,6 +23,7 @@ const { title, description } = Astro.props;
 		<title>Portfolio: {title}</title>
 		<meta property="og:description" content="Stron: Freelance web developer with Javascript/ Typescript, PHP, HTML and css.">
 		<meta property="og:image" content="/portfolio.webp">
+		<link rel="canonical" href={canonicalURL} />
 		<script defer src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 	</head>
 	<body>
