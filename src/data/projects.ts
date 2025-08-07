@@ -9,7 +9,7 @@ export const projects = [
     {
         title: "URL Shortener",
         body: "URL shortener created with HONO (alternative to express), Typescript, htmx, D1 Cloudflare workers.Shorten links and store in a database with sqlite.",
-        href: "https://link-shortener.stron-dev.workers.dev/",
+        href: "https://link.stron.me/",
         image:"/url-shortener.png",
         tecnologies: ["Hono", "Typescript", "Cloudflare Workers", "HTMX", "SQLite"],
     },
