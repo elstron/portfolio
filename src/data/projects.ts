@@ -1,5 +1,12 @@
 export const projects = [
     {
+        title: "Table of Contents for Astro Build",
+        body: "Integration for Astro framework that automatically adds a table of contents. Project with thousands of downloads.",
+        href: "https://astro-table-of-contents.stron.me/",
+        image: "https://cdn.stron.me/astro-table-of-contents.png",
+        tecnologies: ["Astro", "Typescript", "HTML", "CSS"],
+    },
+    {
         title: "F1 Calendar",
         body: "F1 Calendar created with Astro, React and Googlesheets",
         href: "https://f1calendar-xi.vercel.app/",
@@ -19,13 +26,6 @@ export const projects = [
         href: "https://ifortnite.pages.dev/",
         image:"/ifortnite.png",
         tecnologies: ["Astro", "React", "Express", "Typescript"],
-    },
-    {
-        title: "Table of Contents for Astro Build",
-        body: "Integration for Astro that automatically adds a table of contents. Project with thousands of downloads.",
-        href: "https://github.com/elstron/astro-table-of-contents",
-        image: "https://cdn.stron.me/astro-table-of-contents.png",
-        tecnologies: ["Astro", "Typescript", "HTML", "CSS"],
     },
     {
         title: "Astro.build Integration: Lite Iframe",
